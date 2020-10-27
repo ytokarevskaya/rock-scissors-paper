@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Rock, paper, scissors</title>
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="src/css/style.css">
+	</head>
+	<body>
+		<main>
+			<section class="header__frame">
+				<h1>It's a Rock Paper Scissors game</h1>
+				<p>Let's start. Make your choice:</p>
+			</section>
+			<section class="buttons__frame">
+				<div class="buttons__item" data-target="rock">
+					<div class="buttons__item-img rock">
+						<img src="src/img/stone.svg" alt="Rock" />
+					</div>
+					<p class="buttons__item-title">Rock</p>
+				</div>
+				<div class="buttons__item" data-target="paper">
+					<div class="buttons__item-img paper">
+						<img src="src/img/paper.svg" alt="Paper" />
+					</div>
+					<p class="buttons__item-title">Paper</p>
+				</div>
+				<div class="buttons__item" data-target="scissors">
+					<div class="buttons__item-img scissors">
+						<img src="src/img/scissors.svg" alt="Scissors" />
+					</div>
+					<p class="buttons__item-title">Scissors</p>
+				</div>
+			</section>
+			<section class="progressbar">
+				<div class="progressbar__title">You need to succeed <strong>5</strong> times to win</div>
+				<div class="progressbar__frame">
+					<div class="progressbar__part user">
+						<div class="progressbar__part-fill"></div>
+					</div>
+					<div class="progressbar__part computer">
+						<div class="progressbar__part-fill"></div>
+					</div>
+				</div>
+			</section>
+			<section class="result__frame">
+				<p class="result__frame-play"></p>
+				<div class="result__frame-game"></div>
+			</section>
+			<div id="score">
+				<h3>Score</h3>
+				<p>Player - <span class="userCount">0</span> | Computer - <span class="computerCount">0</span></p>
+			</div>
+		</main>
+		<script type="text/javascript" src="dist/index.js"></script>
+	</body>
+</html>
