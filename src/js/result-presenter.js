@@ -4,6 +4,7 @@ export default class ResultPresenter {
 		this.playResult = document.querySelector(".result__frame-play");
 		this.gameResult = document.querySelector(".result__frame-game");
 		this.tryAgain = document.querySelector(".result__frame-play-again");
+		this.loader = document.querySelector(".loader__frame");
 	}
 
 	playOver(playStatus, userChoice, computerChoice) {
@@ -28,5 +29,13 @@ export default class ResultPresenter {
 		this.gameResult.innerHTML = "";
 		this.playResult.innerHTML = "";
 		this.tryAgain.classList.remove("is-visible");
+	}
+
+	loaderOn() {
+		this.loader.classList.add("is-on");
+	}
+
+	loaderOff() {
+		this.loader.classList.remove("is-on");
 	}
 }

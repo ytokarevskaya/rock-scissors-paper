@@ -26,12 +26,17 @@ export default class Game {
 	  } else if (userChoice === "scissors") {
 	  	this.playStatus = computerChoice === "paper" ? 1 : 2;
 	  }
-	  this.updateScore(this.playStatus);
-	  resultPresenter.playOver(this.playStatus, userChoice, computerChoice);
-	  if (this.playStatus) {
-	  	const winnerName = this.playStatus === 1? "user" : "computer";
-	  	progressBar.setBarPosition(winnerName, this.score[winnerName]);
-	  }
+	  resultPresenter.loaderOn();
+	  setTimeout(() => {
+	  	resultPresenter.loaderOff();
+	  	resultPresenter.playOver(this.playStatus, userChoice, computerChoice);
+	  	this.updateScore(this.playStatus);
+	  	if (this.playStatus) {
+		  	const winnerName = this.playStatus === 1? "user" : "computer";
+		  	progressBar.setBarPosition(winnerName, this.score[winnerName]);
+		  }
+	  }, 1500);
+	  
 	  return this.playStatus;
 	}
 
