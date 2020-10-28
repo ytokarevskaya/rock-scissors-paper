@@ -8,4 +8,9 @@ export default class ProgressBar {
 		const bar = name === "user"? this.userBar : this.computerBar;
 		bar.querySelector(".progressbar__part-fill").style.width = `${100 / 5 * score}%`;
 	}
+
+	restart() {
+		this.userBar.querySelector(".progressbar__part-fill").style.width = 0;
+		this.computerBar.querySelector(".progressbar__part-fill").style.width = 0;
+	}
 }

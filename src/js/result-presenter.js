@@ -1,8 +1,9 @@
 export default class ResultPresenter {
-	constructor(resultFrame, buttonsFrame) {
+	constructor() {
 		this.buttonsFrame = document.querySelector(".buttons__frame");
 		this.playResult = document.querySelector(".result__frame-play");
-		this.gameResult = document.querySelector(".result__frame-game")
+		this.gameResult = document.querySelector(".result__frame-game");
+		this.tryAgain = document.querySelector(".result__frame-play-again");
 	}
 
 	playOver(playStatus, userChoice, computerChoice) {
@@ -19,5 +20,13 @@ export default class ResultPresenter {
 	gameOver(winnerName) {
 		this.buttonsFrame.classList.add("inactive");
 		this.gameResult.innerHTML = `<h2>${winnerName === "user"? "Congrats! You won :)" : "Oh, no! You lost :("}</h2>`;
+		this.tryAgain.classList.add("is-visible");
+	}
+
+	newGame() {
+		this.buttonsFrame.classList.remove("inactive");
+		this.gameResult.innerHTML = "";
+		this.playResult.innerHTML = "";
+		this.tryAgain.classList.remove("is-visible");
 	}
 }

@@ -6,7 +6,7 @@ export default class Choice {
 	setRandom() {
 		const randomNumber = Math.floor(Math.random() * 3);
 	  if (randomNumber === 0) {
-	    this.name = "stone";
+	    this.name = "rock";
 	  } else if (randomNumber === 1) {
 	    this.name = "paper";
 	  } else if (randomNumber === 2) {

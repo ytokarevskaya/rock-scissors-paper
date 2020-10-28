@@ -20,23 +20,11 @@ export default class Game {
 		if (userChoice === computerChoice) {
 			this.playStatus = 0;
 		} else if (userChoice === "rock") {
-	    if (computerChoice === "paper") {
-	      this.playStatus = 2;
-	    } else {
-	      this.playStatus = 1;
-	    }
+	    this.playStatus = computerChoice === "scissors" ? 1 : 2;
 	  } else if (userChoice === "paper") {
-	    if (computerChoice === "rock") {
-	      this.playStatus = 1;
-	    } else {
-	      this.playStatus = 2;
-	    }
+	  	this.playStatus = computerChoice === "rock" ? 1 : 2;
 	  } else if (userChoice === "scissors") {
-	    if (computerChoice === "paper") {
-	      this.playStatus = 1;
-	    } else {
-	      this.playStatus = 2;
-	    }
+	  	this.playStatus = computerChoice === "paper" ? 1 : 2;
 	  }
 	  this.updateScore(this.playStatus);
 	  resultPresenter.playOver(this.playStatus, userChoice, computerChoice);
@@ -58,5 +46,13 @@ export default class Game {
 		} else if (this.score.computer === 5) {
 			resultPresenter.gameOver("computer");
 		}
+	}
+
+	newGame() {
+		this.playStatus = null;
+		this.score.computer = 0;
+		this.score.user = 0;
+		progressBar.restart();
+		resultPresenter.newGame();
 	}
 }

@@ -128,10 +128,18 @@ main {
   background: #c42121;
 }
 
-#score {
+/* result */
+
+.result__frame-play-again {
+  cursor: pointer;
+  text-decoration: underline;
   display: none;
 }
 
-#score.visible {
+.result__frame-play-again:hover {
+  text-decoration: none;
+}
+
+.result__frame-play-again.is-visible {
   display: block;
 }

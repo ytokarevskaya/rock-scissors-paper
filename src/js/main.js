@@ -2,10 +2,15 @@ import Game from "./game";
 import Choice from "./choice";
 
 const scoreFrame = document.getElementById("score");
+const tryAgain = document.querySelector(".result__frame-play-again");
 const game = new Game();
 
 document.querySelectorAll(".buttons__item").forEach(button => {
   button.addEventListener("click", startGame);
+});
+
+tryAgain.addEventListener("click", () => {
+  game.newGame();
 })
 
 function startGame(event) {
