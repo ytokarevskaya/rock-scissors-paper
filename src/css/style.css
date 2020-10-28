@@ -191,3 +191,33 @@ main {
 .result__frame-play-again.is-visible {
   display: block;
 }
+
+/* media */ 
+
+@media screen and (max-width: 650px) {
+  main {
+    width: calc(100% - 50px);
+    padding: 25px;
+  }
+
+  .header__frame {
+    padding-top: 25px;
+  }
+
+  .buttons__frame {
+    padding: 0 0 15px 0;
+  }
+
+  .buttons__item {
+    width: calc(33% - 30px);
+    padding: 5px 15px;
+  }
+
+  .buttons__item-title {
+    margin: 0.5em 0 0 0;
+  }
+
+  .loader {
+    padding-bottom: 15px;
+  }
+}
